@@ -22,14 +22,39 @@ To create an **abstract class** named `Shape` with an **abstract method** `calcu
    - Set default value for `radius`.
    - Override `calculate_area()` to compute the circle area.
 
-5. **Create Objects & Call Methods**:
+5. **Create Obj
+6. ects & Call Methods**:
    - Instantiate `Rectangle` and `Circle`.
    - Call their `calculate_area()` methods.
 
 ---
 
 ## 💻 Program
+from abc import ABC, abstractmethod
+import math
 
+class type_shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+    
+class Rectangle(type_shape):
+    def __init__(self,l,b):
+        self.l = l
+        self.b =b
+    def area(self):
+        return self.l*self.b
+ class Circle(type_shape):
+    def __init__(self,r):
+        self.r = r
+    def area(self):
+        return 3.14*self.r*self.r
+r = Rectangle(6, 4)
+c = Circle(7)
+print("Area of a rectangle:",r.area())
+print("Area of a circle:",c.area())
 ## Output
-
+Area of a rectangle: 24
+Area of a circle: 153.86
 ## Result
+Thus,the python program was run successfully for the given question
